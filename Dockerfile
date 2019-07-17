@@ -1,12 +1,10 @@
 FROM node:8.10.0
+LABEL "maintainer"="jeanbblakely@gmail.com"
 
-WORKDIR /app
+RUN mkdir /cs6261project4
+WORKDIR /cs6261project4
 
-ENV PATH /app/node_modules/.bin:$PATH
-
-COPY package.json /app/package.json
-RUN npm install
+RUN npm i npm@latest -g
 RUN npm install -g @angular/cli@7.3.9
 RUN npm install http-server -g
-
-CMD http-server -p 4200
+RUN http-server -p 4200
