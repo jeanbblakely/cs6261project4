@@ -8,3 +8,6 @@ RUN npm i npm@latest -g
 RUN npm install -g @angular/cli@7.3.9
 RUN npm install http-server -g
 RUN http-server -p 4200
+
+CMD http-server -p 4200
+
