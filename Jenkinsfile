@@ -18,6 +18,7 @@ pipeline {
             steps {
                 sh 'docker build --tag testimage:latest .'
                 echo 'Docker image'
+                sh 'docker stop testcontainer'
                 sh 'docker run -it -d -p 4200:4200 -v /$WORKSPACE:/work/cs6261project4/app --name testcontainer testimage:latest'
                 echo 'Docker container'
                 sh './node_modules/protractor/bin/webdriver-manager update'
