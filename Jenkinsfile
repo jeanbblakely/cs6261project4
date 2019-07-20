@@ -32,10 +32,8 @@ pipeline {
     
     post {
         cleanup {
-            steps {
-                sh 'docker rm testcontainer || true'
-                sh 'docker rm testimage:latest || true'
-            }
+             sh 'docker rm testcontainer || true'
+             sh 'docker rm testimage:latest || true'
         }
     }
 }
