@@ -32,8 +32,9 @@ pipeline {
     
     post {
         cleanup {
-             sh 'docker rm testcontainer || true'
-             sh 'docker rm testimage:latest || true'
+            sh 'docker stop testcontainer || true'
+            sh 'docker rm testcontainer || true'
+            sh 'docker rmi testimage || true'
         }
     }
 }
