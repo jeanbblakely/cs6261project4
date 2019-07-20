@@ -1,7 +1,5 @@
 #!/bin/bash
-echo "hello from the script"
-if [ -e "${HOME}/CS6261project4/.package.json" ]; then
-    echo "successfully mounted"
-else
-    echo "not mounted"
-fi
+
+ng build
+cd dist/cs6261project4
+http-server -p 4200
