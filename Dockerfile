@@ -7,4 +7,4 @@ RUN npm i npm@latest -g
 RUN npm install -g @angular/cli@7.3.9
 RUN npm install http-server -g
 
-CMD ["./script.sh"]
+CMD ["/work/cs6261project4/script.sh"]
