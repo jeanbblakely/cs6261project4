@@ -1,0 +1,27 @@
+<h2>Resistance:</h2>
+
+<h3>Select bands</h3>
+
+
+<p>Digits:
+<p><select name="digit-1" [(ngModel)]="digit1">
+<option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+</select>
+
+<select name="digit-2" [(ngModel)]="digit2">
+<option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+</select>
+
+<select name="digit-3" [(ngModel)]="digit3">
+<option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+</select>
+
+
+<h2>Debug</h2>
+
+<p>Digits: {{digit1}} {{digit2}} {{digit3}}
+
+<p>Multiplier:
+
+<p>Tolerance:
+
