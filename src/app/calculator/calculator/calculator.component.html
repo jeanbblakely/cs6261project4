@@ -5,15 +5,25 @@
 
 <p>Digits:
 <p><select name="digit-1" [(ngModel)]="digit1">
-<option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+<option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
 
 <select name="digit-2" [(ngModel)]="digit2">
-<option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+<option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
 
 <select name="digit-3" [(ngModel)]="digit3">
-<option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+<option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
+</select>
+
+<p>Multiplier
+<p><select name="multiplier" [(ngModel)]="multiplier">
+<option *ngFor="let multiplier of multipliers" [ngValue]="multiplier.value">{{multiplier.color}}</option>
+</select>
+
+<p>Tolerance
+<p><select name="tolerance" [(ngModel)]="tolerance">
+<option *ngFor="let tolerance of tolerances" [ngValue]="tolerance.value">{{tolerance.color}}</option>
 </select>
 
 
@@ -21,7 +31,7 @@
 
 <p>Digits: {{digit1}} {{digit2}} {{digit3}}
 
-<p>Multiplier:
+<p>Multiplier: {{multiplier}}
 
-<p>Tolerance:
+<p>Tolerance: {{tolerance}}
 
