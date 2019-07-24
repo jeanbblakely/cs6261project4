@@ -26,17 +26,17 @@ export class CalculatorComponent implements OnInit {
   ];
   public multipliers = [
     { color: 'Black', value: 1 },
-    { color: 'Brown', value: 10 },
-    { color: 'Red', value: 100 },
-    { color: 'Orange', value: 1000 },
-    { color: 'Yellow', value: 10000 },
-    { color: 'Green', value: 100000 },
-    { color: 'Blue', value: 100000 },
-    { color: 'Violet', value: 100000 },
-    { color: 'Grey', value: 1000000 },
-    { color: 'White', value: 10000 },
-    { color: 'Gold', value: 10 },
-    { color: 'Silver', value: 100 }
+    { color: 'Brown', value: 0.01 },
+    { color: 'Red', value: 0.1 },
+    { color: 'Orange', value: 1 },
+    { color: 'Yellow', value: 0.01 },
+    { color: 'Green', value: 0.1 },
+    { color: 'Blue', value: 1 },
+    { color: 'Violet', value: 0.01 },
+    { color: 'Grey', value: 0.1 },
+    { color: 'White', value: 1.00 },
+    { color: 'Gold', value: 0.1 },
+    { color: 'Silver', value: 0.01 }
   ];
   public tolerances = [
     { color: 'Brown', value: 1 },
