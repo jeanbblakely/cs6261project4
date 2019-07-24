@@ -9,7 +9,7 @@ export class CalculatorService {
   
   // Calculates the Resistance
   calculate(digits, multiplier) {
-    return digits * multiplier;
+    return digits * Math.pow(10, multiplier);
   }
   
   

@@ -27,9 +27,9 @@ export class CalculatorComponent implements OnInit {
     { color: 'White', value: 9 }
   ];
   public multipliers = [
-    { color: 'Black', value: 1 },
-    { color: 'Brown', value: 0.01 },
-    { color: 'Red', value: 0.1 },
+    { color: 'Black', value: 0 },
+    { color: 'Brown', value: 1 },
+    { color: 'Red', value: 2 },
     { color: 'Orange', value: 1 },
     { color: 'Yellow', value: 0.01 },
     { color: 'Green', value: 0.1 },
@@ -37,8 +37,8 @@ export class CalculatorComponent implements OnInit {
     { color: 'Violet', value: 0.01 },
     { color: 'Grey', value: 0.1 },
     { color: 'White', value: 1.00 },
-    { color: 'Gold', value: 0.1 },
-    { color: 'Silver', value: 0.01 }
+    { color: 'Gold', value: -1 },
+    { color: 'Silver', value: -2 }
   ];
   public tolerances = [
     { color: 'Brown', value: 1 },
@@ -50,10 +50,23 @@ export class CalculatorComponent implements OnInit {
     { color: 'Violet', value: 0.10 },
     { color: 'Grey', value: 0.05 },
     { color: 'Gold', value: 5 },
-    { color: 'Silver', value: 10 }
+    { color: 'Silver', value: 10 },
+    { color: 'None', value: 20 },
   ];
     
-  constructor(private calculatorService: CalculatorService) { }
+  constructor(private calculatorService: CalculatorService) { 
+    this.multipliers = this.digits.slice(0);
+    this.multipliers.push( 
+      { color: 'Gold', value: -1 },
+      { color: 'Silver', value: -2 }
+      );
+    this.digit1 = this.digits[0].value;
+    this.digit2 = this.digits[0].value;
+    this.digit3 = this.digits[0].value;
+    this.multiplier = this.multipliers[0].value;
+    this.tolerance = this.tolerances[0].value;
+    
+  }
 
   ngOnInit() {
     this.calculate();
@@ -62,8 +75,7 @@ export class CalculatorComponent implements OnInit {
   // Calculates the resistance
   calculate() {
     let digit = this.digit1.toString() + this.digit2.toString() + this.digit3.toString();
-    digit.Number();
-    this.resistance = this.calculatorService.calculate(digit, this.multiplier);
+    this.resistance = this.calculatorService.calculate(Number(digit), this.multiplier).toString() + ' +/-' + this.tolerance.toString() + '%';
   }
 
 }

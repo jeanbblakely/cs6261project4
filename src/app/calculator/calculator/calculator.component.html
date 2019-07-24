@@ -1,8 +1,10 @@
-<h2>Resistance: {{resistance}} +/-{{tolerance}}%</h2>
+<h2>Resistance: {{resistance}}</h2>
 
-<h3>Select bands</h3>
+<h3>Select bands:</h3>
 
-
+<table>
+<tr>
+<td>
 <p>Digits:
 <p><select name="digit-1" [(ngModel)]="digit1">
 <option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
@@ -11,21 +13,27 @@
 <select name="digit-2" [(ngModel)]="digit2">
 <option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
-
 <select name="digit-3" [(ngModel)]="digit3">
 <option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
-
-<p>Multiplier
+</td>
+<td>
+<p>Multiplier:
 <p><select name="multiplier" [(ngModel)]="multiplier">
 <option *ngFor="let multiplier of multipliers" [ngValue]="multiplier.value">{{multiplier.color}}</option>
 </select>
-
-<p>Tolerance
+</td>
+<td>
+<p>Tolerance:
 <p><select name="tolerance" [(ngModel)]="tolerance">
 <option *ngFor="let tolerance of tolerances" [ngValue]="tolerance.value">{{tolerance.color}}</option>
 </select>
-
+</td>
+</tr>
+<tr>
+<td colspan=3><button (click)="calculate()">Calculate</button></td>
+</tr>
+</table>
 
 <h2>Debug</h2>
 
