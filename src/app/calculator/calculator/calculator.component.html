@@ -1,19 +1,19 @@
-<h2>Resistance: {{resistance}}</h2>
+<h2 id="resistance">Resistance: {{resistance}}</h2>
 
-<h3>Select bands:</h3>
+<h3 id="select-bands">Select bands:</h3>
 
 <table>
 <tr>
 <td>
 <p>Digits:
-<p><select name="digit-1" [(ngModel)]="digit1">
+<p><select id="digit-1" name="digit-1" [(ngModel)]="digit1">
 <option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
 
-<select name="digit-2" [(ngModel)]="digit2">
+<select id="digit-2" name="digit-2" [(ngModel)]="digit2">
 <option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
-<select name="digit-3" [(ngModel)]="digit3">
+<select id="digit-3" name="digit-3" [(ngModel)]="digit3">
 <option *ngFor="let digit of digits" [ngValue]="digit.value">{{digit.color}}</option>
 </select>
 </td>
