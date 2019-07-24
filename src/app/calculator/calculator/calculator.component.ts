@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CalculatorService } from './../../services/calculator.service';
 
 @Component({
   selector: 'app-calculator',
@@ -7,6 +8,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+  public resistance;
   public digit1; 
   public digit2;
   public digit3;
@@ -51,10 +53,17 @@ export class CalculatorComponent implements OnInit {
     { color: 'Silver', value: 10 }
   ];
     
-  constructor() { }
+  constructor(private calculatorService: CalculatorService) { }
 
   ngOnInit() {
-    
+    this.calculate();
+  }
+  
+  // Calculates the resistance
+  calculate() {
+    let digit = this.digit1.toString() + this.digit2.toString() + this.digit3.toString();
+    digit.Number();
+    this.resistance = this.calculatorService.calculate(digit, this.multiplier);
   }
 
 }
