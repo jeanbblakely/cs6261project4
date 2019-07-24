@@ -26,20 +26,7 @@ export class CalculatorComponent implements OnInit {
     { color: 'Grey', value: 8 },
     { color: 'White', value: 9 }
   ];
-  public multipliers = [
-    { color: 'Black', value: 0 },
-    { color: 'Brown', value: 1 },
-    { color: 'Red', value: 2 },
-    { color: 'Orange', value: 1 },
-    { color: 'Yellow', value: 0.01 },
-    { color: 'Green', value: 0.1 },
-    { color: 'Blue', value: 1 },
-    { color: 'Violet', value: 0.01 },
-    { color: 'Grey', value: 0.1 },
-    { color: 'White', value: 1.00 },
-    { color: 'Gold', value: -1 },
-    { color: 'Silver', value: -2 }
-  ];
+  public multipliers;
   public tolerances = [
     { color: 'Brown', value: 1 },
     { color: 'Red', value: 2 },
@@ -75,7 +62,7 @@ export class CalculatorComponent implements OnInit {
   // Calculates the resistance
   calculate() {
     let digit = this.digit1.toString() + this.digit2.toString() + this.digit3.toString();
-    this.resistance = this.calculatorService.calculate(Number(digit), this.multiplier).toString() + ' +/-' + this.tolerance.toString() + '%';
+    this.resistance = this.calculatorService.calculate(Number(digit), this.multiplier) + ' ohms +/-' + this.tolerance.toString() + '%';
   }
 
 }

@@ -9,7 +9,17 @@ export class CalculatorService {
   
   // Calculates the Resistance
   calculate(digits, multiplier) {
-    return digits * Math.pow(10, multiplier);
+    let result = digits * Math.pow(10, multiplier);
+    if (result > 1000000000) {
+      return (result / 1000000000).toString() + 'G';
+    } else if (result > 1000000) {
+      return (result / 1000000).toString() + 'M';
+    } else if (result > 1000) {
+      return (result / 1000).toString() + 'K';
+    } else {
+      return result.toString();
+    }
+      
   }
   
   
