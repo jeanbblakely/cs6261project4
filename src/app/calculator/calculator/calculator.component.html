@@ -19,13 +19,13 @@
 </td>
 <td>
 <p>Multiplier:
-<p><select name="multiplier" [(ngModel)]="multiplier">
+<p><select id="multiplier" name="multiplier" [(ngModel)]="multiplier">
 <option *ngFor="let multiplier of multipliers" [ngValue]="multiplier.value">{{multiplier.color}}</option>
 </select>
 </td>
 <td>
 <p>Tolerance:
-<p><select name="tolerance" [(ngModel)]="tolerance">
+<p><select id="tolerance" name="tolerance" [(ngModel)]="tolerance">
 <option *ngFor="let tolerance of tolerances" [ngValue]="tolerance.value">{{tolerance.color}}</option>
 </select>
 </td>
